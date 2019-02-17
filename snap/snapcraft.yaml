@@ -1,0 +1,35 @@
+name: hello-dotnet-maurice
+version: "1.00"
+summary: .NET Hello World
+description: .NET Hello World
+grade: stable
+confinement: strict
+architectures: 
+  - build-on: amd64
+    run-on: amd64
+  - build-on: armhf
+    run-on: [armhf, arm64]
+
+apps:
+  hello:
+    command: publish/hello
+
+parts:
+  net-hello:
+    plugin: dump
+    source: src/bin
+    stage-packages:
+        - "libunwind8"
+        - "libicu55"
+        - "icu-devtools"
+        - "libc6"
+        - "libcurl3"
+        - "libgcc1"
+        - "libgssapi-krb5-2"
+        - "libicu-dev"
+        - "liblttng-ust0"
+        - "libstdc++6"
+        - "libuuid1"
+        - "wget"
+
+
