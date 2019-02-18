@@ -1,5 +1,2 @@
 #!/bin/bash -e
-dotnet publish -r linux-arm -o bin/publish src/hello.csproj
-
-#snapcraft cleanbuild --target-arch=armhf
-snapcraft --target-arch=armhf
+dotnet publish -r linux-x64 -o bin/publish src/hello.csproj
